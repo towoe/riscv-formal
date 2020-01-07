@@ -44,9 +44,9 @@ Run the following to first create the Verilog source, create the checks and then
 This is split into different targets without dependencies as a regeneration of the checks will delete the previous checks, and it might not always be necessary to create the Ibex Verilog source.
 
 ```console
-$ make create
-$ make generate
-$ make check
+$ make container-create-ibex
+$ make container-generate
+$ make container-check
 ```
 
 To run only one or more checks the environment variable `CHECK` can be set accordingly.
@@ -56,5 +56,5 @@ The corresponding folders in *checks* have to be removed first.
 $ rm -rf checks/insn_add_ch0 checks/liveness_ch0
 
 $ CHECK="insn_add_ch0 \
-liveness_ch0" make check
+liveness_ch0" make container-check
 ```
