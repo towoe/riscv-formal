@@ -65,5 +65,9 @@ ibex_core uut (
       `RVFI_CONN
 );
 
+`ifdef IBEX_FAIRNESS
+      // TODO add constraints for liveness check
+`endif
+
 endmodule
 
