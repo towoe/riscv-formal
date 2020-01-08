@@ -3,6 +3,11 @@ riscv-formal proofs for Ibex
 
 **This is work in progress**
 
+The checks which are supported are configured in [checks.cfg](checks.cfg).
+This is a limited of subset of the standard checks.
+More checks need to be activated, this is work in progress.
+The activated checks should run successfully with Ibex.
+
 ## Tools installed locally
 
 Quickstart guide:

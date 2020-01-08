@@ -11,7 +11,7 @@ module rvfi_wrapper (
 (* keep *) `rvformal_rand_reg instr_rvalid_i;
 (* keep *) wire [31:0] instr_addr_o;
 (* keep *) `rvformal_rand_reg [31:0] instr_rdata_i;
-(* keep *) wire instr_err_i;
+(* keep *) `rvformal_rand_reg instr_err_i;
 
 (* keep *) wire data_req_o;
 (* keep *) `rvformal_rand_reg data_gnt_i;
@@ -21,7 +21,6 @@ module rvfi_wrapper (
 (* keep *) wire [31:0] data_addr_o;
 (* keep *) wire [31:0] data_wdata_o;
 (* keep *) `rvformal_rand_reg [31:0] data_rdata_i;
-(* keep *) `rvformal_rand_reg data_err_i;
 
 (* keep *) wire sleeping;
 
@@ -49,7 +48,8 @@ ibex_core uut (
       .data_addr_o         (data_addr_o),
       .data_wdata_o        (data_wdata_o),
       .data_rdata_i        (data_rdata_i),
-      .data_err_i          (data_err_i),
+      // TODO: Add signal for data err. Maybe add constraints.
+      .data_err_i          (1'b0),
 
       .irq_software_i      (1'b0),
       .irq_timer_i         (1'b0),
